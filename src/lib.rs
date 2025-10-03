@@ -1,6 +1,5 @@
 pub type IdType = u32;
 
-
 #[derive(Debug, Clone)]
 pub struct DecodedMessage {
     pub name: String,
