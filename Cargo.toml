@@ -11,3 +11,4 @@ homepage = "https://github.com/LelsersLasers/can_unpack"
 keywords = ["CAN", "parse", "decode", "unpack", "dbc"]
 
 [dependencies]
+can-dbc = "6.0.0"
