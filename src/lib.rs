@@ -37,7 +37,10 @@ impl Parser {
                 can_dbc::MessageId::Extended(id) => *id,
             };
             if self.message_defs.contains_key(&msg_id) {
-                log::warn!("Duplicate message ID {msg_id:#X} ({}). Overwriting existing definition.", message.message_name());
+                log::warn!(
+                    "Duplicate message ID {msg_id:#X} ({}). Overwriting existing definition.",
+                    message.message_name()
+                );
             }
             self.message_defs.insert(msg_id, message.clone());
         }
@@ -70,7 +73,11 @@ impl Parser {
                     decoded_signals.insert(decoded_signal.name.to_string(), decoded_signal);
                 }
                 None => {
-                    log::warn!("Failed to decode signal {} from message {}", signal_def.name(), msg_name);
+                    log::warn!(
+                        "Failed to decode signal {} from message {}",
+                        signal_def.name(),
+                        msg_name
+                    );
                 }
             }
         }
