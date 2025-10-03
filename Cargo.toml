@@ -12,3 +12,4 @@ keywords = ["CAN", "parse", "decode", "unpack", "dbc"]
 
 [dependencies]
 can-dbc = "6.0.0"
+log = "0.4"

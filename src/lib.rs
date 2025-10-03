@@ -27,13 +27,18 @@ impl Parser {
     }
 
     pub fn add_from_slice(&mut self, buffer: &[u8]) -> Result<(), Box<dyn std::error::Error>> {
-        let dbc = can_dbc::DBC::from_slice(buffer).map_err(|e| format!("{:?}", e))?;
+        let dbc = can_dbc::DBC::from_slice(buffer).map_err(|e| {
+            log::error!("Failed to parse DBC: {:?}", e);
+            format!("{:?}", e)
+        })?;
         for message in dbc.messages() {
             let msg_id = match message.message_id() {
                 can_dbc::MessageId::Standard(id) => *id as u32,
                 can_dbc::MessageId::Extended(id) => *id,
             };
-            // Todo logging, warn if duplicate
+            if self.message_defs.contains_key(&msg_id) {
+                log::warn!("Duplicate message ID {msg_id:#X} ({}). Overwriting existing definition.", message.message_name());
+            }
             self.message_defs.insert(msg_id, message.clone());
         }
         Ok(())
@@ -65,7 +70,7 @@ impl Parser {
                     decoded_signals.insert(decoded_signal.name.to_string(), decoded_signal);
                 }
                 None => {
-                    // Todo logging, warn if signal could not be decoded
+                    log::warn!("Failed to decode signal {} from message {}", signal_def.name(), msg_name);
                 }
             }
         }
