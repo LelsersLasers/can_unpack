@@ -188,6 +188,10 @@ impl Parser {
         let msg_def = self.message_defs.get(&msg_id)?;
         Some(msg_def.signals().to_vec())
     }
+
+    pub fn messages(&self) -> Vec<can_dbc::Message> {
+        self.message_defs.values().cloned().collect()
+    }
 }
 
 impl Default for Parser {
