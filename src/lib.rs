@@ -199,6 +199,10 @@ impl Parser {
     pub fn msg_defs(&self) -> Vec<can_dbc::Message> {
         self.msg_defs.values().cloned().collect()
     }
+
+    pub fn clear(&mut self) {
+        self.msg_defs.clear();
+    }
 }
 
 impl Default for Parser {
