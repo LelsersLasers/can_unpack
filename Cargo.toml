@@ -2,13 +2,13 @@
 name = "can_unpack"
 version = "0.1.0"
 edition = "2024"
-authors = ["Millan Kumar <millankumar@gmail.com>"]
-description = "Unpack / decode / parse CAN frames into Signals"
+authors = ["Millan Kumar <millankumar@gmail.com>", "Purdue Electric Racing"]
+description = "Decode / parse CAN frames into messages/signals in a fast and easy way."
 license = "MIT"
 readme = "./README.md"
 repository = "https://github.com/LelsersLasers/can_unpack"
 homepage = "https://github.com/LelsersLasers/can_unpack"
-keywords = ["CAN", "parse", "decode", "unpack", "dbc"]
+keywords = ["CAN", "parse", "decode", "unpack", "dbc", "automotive", "embedded"]
 
 [dependencies]
 can-dbc = "6.0.0"
