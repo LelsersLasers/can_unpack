@@ -1,2 +1,3 @@
 # can-unpack
-Unpack / decode / parse CAN frames into Signals
+
+Decode / parse CAN frames into messages/signals in a fast and easy way."
