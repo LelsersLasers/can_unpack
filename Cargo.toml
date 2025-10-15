@@ -8,7 +8,8 @@ license = "MIT"
 readme = "./README.md"
 repository = "https://github.com/LelsersLasers/can_unpack"
 homepage = "https://github.com/LelsersLasers/can_unpack"
-keywords = ["CAN", "parse", "decode", "unpack", "dbc", "automotive", "embedded"]
+keywords = ["CAN", "parse", "decode", "ecu", "dbc"]
+categories = ["embedded", "automotive", "encoding", "parsing", "protocol"]
 
 [dependencies]
 can-dbc = "6.0.0"
