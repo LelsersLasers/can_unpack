@@ -1,5 +1,7 @@
 # can_unpack
 
+REPLACED BY [can_decode](https://github.com/PurdueElectricRacing/can_decode).
+
 Decode / parse CAN frames into messages/signals in a fast and easy way.
 
 <!-- [![Crates.io](https://img.shields.io/crates/v/can_unpack.svg)](https://crates.io/crates/can_unpack)
